@@ -1,0 +1,15 @@
+- id: bazel-buildifier
+  name: buildifier
+  description: "Run Buildifier"
+  entry: bazel run --run_under='cd $BUILD_WORKING_DIRECTORY &&' @com_github_bazelbuild_buildtools//buildifier --
+  language: system
+  minimum_pre_commit_version: 2.13.0
+  require_serial: true
+  types: [bazel]
+- id: buildifier
+  name: buildifier
+  description: "Run Buildifier"
+  entry: buildifier
+  language: system
+  minimum_pre_commit_version: 2.13.0
+  types: [bazel]
